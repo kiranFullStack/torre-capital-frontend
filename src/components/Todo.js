@@ -91,7 +91,6 @@ export default function Todo({
           todo.subtasks.map((todosubtask, index) => (
             <div
               key={todosubtask.id}
-              className='subtask-container'
               className={` ${
                 todosubtask.isComplete
                   ? ' subtask-container-complete'
