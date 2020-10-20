@@ -17,7 +17,7 @@ export default function TodoForm({ addTodo }) {
         type='text'
         className='input'
         id='outlined-basic'
-        label='What Task do you wanna finish today ?'
+        label='What do you want to do today ?'
         variant='outlined'
         value={value}
         onChange={(e) => setValue(e.target.value)}

@@ -54,29 +54,31 @@ export default function Todo({
         <h1>{todo.title}</h1>
         <div>
           <Button
-            variant='outlined'
+            // variant='outlined'
             color='primary'
+            className='action-bottons'
             onClick={() => completeTodo(index)}
           >
             <CheckCircleIcon />
           </Button>
           <Button
-            variant='outlined'
+            // variant='outlined'
             color='primary'
+            className='action-bottons'
             onClick={() => removeTodo(index)}
           >
             <DeleteIcon />
           </Button>
           <Button
-            variant='outlined'
             color='primary'
+            className='action-bottons'
             onClick={() => editTodo(index)}
           >
             <EditIcon />
           </Button>
           <Button
-            variant='outlined'
             color='primary'
+            className='action-bottons'
             // open the modal
             // onClick={() => addTodoSubtask(index)}
             onClick={handleClickOpen}
