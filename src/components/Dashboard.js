@@ -62,22 +62,6 @@ function Dashboard(props) {
       progress: undefined,
     })
 
-  let fetchTodos = () => {
-    axios
-      .get('https://arcane-ravine-70872.herokuapp.com//todos/')
-      .then(function (response) {
-        let reversedarray = response.data.reverse()
-        setTodos(reversedarray)
-      })
-      .catch(function (error) {
-        // handle error
-
-        errornotify()
-      })
-      .then(function () {
-        // always executed
-      })
-  }
   let postTodos = (title) => {
     axios
       .post('https://arcane-ravine-70872.herokuapp.com//todos/', {
@@ -121,8 +105,24 @@ function Dashboard(props) {
   }
 
   useEffect(() => {
+    let fetchTodos = () => {
+      axios
+        .get('https://arcane-ravine-70872.herokuapp.com//todos/')
+        .then(function (response) {
+          let reversedarray = response.data.reverse()
+          setTodos(reversedarray)
+        })
+        .catch(function (error) {
+          // handle error
+
+          errornotify()
+        })
+        .then(function () {
+          // always executed
+        })
+    }
     fetchTodos()
-  })
+  }, [])
 
   const addTodo = (title) => {
     const newTodos = [

@@ -4,7 +4,10 @@ $grey: #767676;
 
 h1 {
   color: $black;
-  font-size: 58px;
+  font-size: 38px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 h3 {
@@ -32,7 +35,7 @@ h3 {
 .form-container {
   margin: auto;
   width: 50vw;
-  margin-bottom: 58px;
+  margin-bottom: 48px;
 }
 
 .todo-list {
