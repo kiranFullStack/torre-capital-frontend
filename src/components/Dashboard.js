@@ -75,7 +75,7 @@ function Dashboard(props) {
         playBloop()
       })
       .catch(function (error) {
-        error()
+        errornotify()
       })
   }
 
@@ -87,7 +87,7 @@ function Dashboard(props) {
         play()
       })
       .catch(function (error) {
-        error()
+        errornotify()
       })
   }
 
@@ -100,7 +100,7 @@ function Dashboard(props) {
       })
       .then(function (response) {})
       .catch(function (error) {
-        error()
+        errornotify()
       })
   }
 
