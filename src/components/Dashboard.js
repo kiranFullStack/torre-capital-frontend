@@ -122,7 +122,7 @@ function Dashboard(props) {
 
   useEffect(() => {
     fetchTodos()
-  }, [])
+  })
 
   const addTodo = (title) => {
     const newTodos = [
