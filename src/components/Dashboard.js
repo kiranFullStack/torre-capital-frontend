@@ -76,17 +76,17 @@ function Dashboard(props) {
   // ─── 👉🏼👉🏼👉🏼 DOING API ACTIONS HERE ─────────────────────────────────────────
   //
 
-  let fetchTodos = () => {
-    axios
-      .get('https://arcane-ravine-70872.herokuapp.com//todos/')
-      .then(function (response) {
-        let reversedarray = response.data.reverse()
-        setTodos(reversedarray)
-      })
-      .catch(function (error) {
-        errornotify()
-      })
-  }
+  // let fetchTodos = () => {
+  //   axios
+  //     .get('https://arcane-ravine-70872.herokuapp.com//todos/')
+  //     .then(function (response) {
+  //       let reversedarray = response.data.reverse()
+  //       setTodos(reversedarray)
+  //     })
+  //     .catch(function (error) {
+  //       errornotify()
+  //     })
+  // }
 
   let postTodos = (title) => {
     axios
@@ -156,7 +156,7 @@ function Dashboard(props) {
     ]
     setTodos(newTodos)
     postTodos(title)
-    fetchTodos()
+    // fetchTodos()
   }
 
   const addTodoSubtask = (index, input) => {
