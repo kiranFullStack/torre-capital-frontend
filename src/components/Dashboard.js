@@ -19,6 +19,7 @@ import cheering from './assets/cheering.mp3'
 import bloop from './assets/bloop.mp3'
 import Footer from './Footer'
 import EmptyContainer from './EmptyContainer'
+import Confetti from 'react-dom-confetti'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Dashboard(props) {
   const [todos, setTodos] = useState([])
+  const [confetti, setconfetti] = useState(false)
   const [play] = useSound(cheering)
   const [playBloop] = useSound(bloop)
 
@@ -102,6 +104,8 @@ function Dashboard(props) {
       .then(function (response) {
         notify()
         play()
+        setconfetti(true)
+        setconfetti(false)
       })
       .catch(function (error) {
         errornotify()
@@ -310,6 +314,10 @@ function Dashboard(props) {
         )}
       </div>
       <ToastContainer />
+      <div className='confetti-container'>
+        <Confetti active={confetti} />
+      </div>
+
       <Footer />
     </div>
   )

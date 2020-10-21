@@ -54,7 +54,6 @@ export default function Todo({
         <h1>{todo.title}</h1>
         <div>
           <Button
-            // variant='outlined'
             color='primary'
             className='action-bottons'
             onClick={() => completeTodo(index)}
@@ -62,7 +61,6 @@ export default function Todo({
             <CheckCircleIcon />
           </Button>
           <Button
-            // variant='outlined'
             color='primary'
             className='action-bottons'
             onClick={() => removeTodo(index)}
@@ -79,14 +77,13 @@ export default function Todo({
           <Button
             color='primary'
             className='action-bottons'
-            // open the modal
-            // onClick={() => addTodoSubtask(index)}
             onClick={handleClickOpen}
           >
             <AddIcon />
           </Button>
         </div>
       </div>
+
       <div>
         {todo &&
           todo.subtasks &&
@@ -123,8 +120,11 @@ export default function Todo({
             </div>
           ))}
       </div>
-
-      {/* modal */}
+      {/* 
+      //
+      // ───👉🏼👉🏼👉🏼 MODAL ───────────────────────────────────────────────────────
+      //
+       */}
       <div style={{ margin: 'auto', textAlign: 'center' }}>
         <Dialog
           open={open}
