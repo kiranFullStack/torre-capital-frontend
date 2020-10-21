@@ -65,7 +65,7 @@ const Login = (props) => {
               Login
             </Button>
             <br />
-            Email = "dev@torrecapital.com", Password = "torrecapital"
+            ⭐️NOTE Email = "dev@torrecapital.com", Password = "torrecapital"
           </>
         )}
       </div>
