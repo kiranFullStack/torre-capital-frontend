@@ -18,7 +18,7 @@ export default function EmptyContainer() {
 
   return (
     <div className='emptyBox'>
-      <h5>Start by adding some tasks above</h5>
+      <h3 style={{ textAlign: 'center' }}>Start by adding some tasks above</h3>
       <Lottie options={defaultOptions} height={400} width={400} />
     </div>
   )
