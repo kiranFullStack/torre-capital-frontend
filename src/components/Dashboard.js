@@ -21,6 +21,10 @@ import Footer from './Footer'
 import EmptyContainer from './EmptyContainer'
 import Confetti from 'react-dom-confetti'
 
+//
+// ─── 👉🏼👉🏼👉🏼 CSS IN JS ──────────────────────────────────────────────────────────────────
+//
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -41,6 +45,10 @@ function Dashboard(props) {
   const [confetti, setconfetti] = useState(false)
   const [play] = useSound(cheering)
   const [playBloop] = useSound(bloop)
+
+  //
+  // ─── 👉🏼👉🏼👉🏼 TOAST FOR SUCCESS ERROR USER FEEDBACK ──────────────────────────────────────
+  //
 
   const notify = () =>
     toast.success('YOU are Awesome!🍾', {
@@ -64,6 +72,10 @@ function Dashboard(props) {
       progress: undefined,
     })
 
+  //
+  // ─── 👉🏼👉🏼👉🏼 DOING API ACTIONS HERE ─────────────────────────────────────────
+  //
+
   let fetchTodos = () => {
     axios
       .get('https://arcane-ravine-70872.herokuapp.com//todos/')
@@ -72,12 +84,7 @@ function Dashboard(props) {
         setTodos(reversedarray)
       })
       .catch(function (error) {
-        // handle error
-
         errornotify()
-      })
-      .then(function () {
-        // always executed
       })
   }
 
@@ -89,8 +96,6 @@ function Dashboard(props) {
         subtasks: [],
       })
       .then(function (response) {
-        // notify()
-        // play()
         playBloop()
       })
       .catch(function (error) {
@@ -134,16 +139,15 @@ function Dashboard(props) {
           setTodos(reversedarray)
         })
         .catch(function (error) {
-          // handle error
-
           errornotify()
-        })
-        .then(function () {
-          // always executed
         })
     }
     fetchTodos()
   }, [])
+
+  //
+  // ─── 👉🏼👉🏼👉🏼 DOING OPERATIONS ON TODO AND SUBTASKS───────────────────────────────────────────────────
+  //
 
   const addTodo = (title) => {
     const newTodos = [
@@ -156,7 +160,6 @@ function Dashboard(props) {
   }
 
   const addTodoSubtask = (index, input) => {
-    // let newSubtask = prompt('Please add a subtask')
     let newSubtask = input
     const newTodos = [...todos]
 
@@ -174,8 +177,6 @@ function Dashboard(props) {
       newTodos[index].subtasks
     )
     setTodos(newTodos)
-
-    // setTodos(newTodos)
   }
 
   const completeTodo = (index) => {
@@ -266,6 +267,10 @@ function Dashboard(props) {
 
   return (
     <div className='app'>
+      {/* 
+// ─── 👉🏼👉🏼👉🏼 HEADER ─────────────────────────────────────────────────────────────────────
+ */}
+
       <AppBar position='static' className={classes.appbar}>
         <Toolbar className='toolbar'>
           <IconButton
@@ -291,6 +296,10 @@ function Dashboard(props) {
         </Toolbar>
       </AppBar>
 
+      {/* 
+// ─── 👉🏼👉🏼👉🏼 Mapping over Todo Component ─────────────────────────────────────────────────────────────────────
+ */}
+
       <div className='todo-list'>
         <TodoForm addTodo={addTodo} />
 
@@ -313,6 +322,9 @@ function Dashboard(props) {
           <EmptyContainer />
         )}
       </div>
+      {/* 
+// ─── 👉🏼👉🏼👉🏼 Displaying toasts and confetti ─────────────────────────────────────────────────────────────────────
+ */}
       <ToastContainer />
       <div className='confetti-container'>
         <Confetti active={confetti} />

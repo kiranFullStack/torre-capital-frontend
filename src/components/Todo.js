@@ -5,7 +5,6 @@ import EditIcon from '@material-ui/icons/Edit'
 import CheckCircleIcon from '@material-ui/icons/CheckCircle'
 import AddIcon from '@material-ui/icons/Add'
 import IconButton from '@material-ui/core/IconButton'
-
 import TextField from '@material-ui/core/TextField'
 import Dialog from '@material-ui/core/Dialog'
 import DialogActions from '@material-ui/core/DialogActions'
@@ -27,6 +26,10 @@ export default function Todo({
   const [open, setOpen] = React.useState(false)
   const [input, setinput] = React.useState('')
 
+  //
+  // ─── 👉🏼👉🏼👉🏼 Functions for Modal ──────────────────────────────────────────────────────────────────
+  //
+
   const handleClickOpen = () => {
     setOpen(true)
   }
@@ -46,6 +49,9 @@ export default function Todo({
         textDecoration: todo.isComplete ? 'line-through solid red' : '',
       }}
     >
+      {/* 
+    // ───👉🏼👉🏼👉🏼 TODO TASK ───────────────────────────────────────────────────
+     */}
       <div
         className={` ${
           todo.isComplete ? 'task-container-complete' : 'task-container'
@@ -83,6 +89,10 @@ export default function Todo({
           </Button>
         </div>
       </div>
+
+      {/* 
+    // ───👉🏼👉🏼👉🏼 TODO SUBTASK ───────────────────────────────────────────────────
+     */}
 
       <div>
         {todo &&

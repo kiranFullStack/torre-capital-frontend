@@ -11,6 +11,11 @@ export default function EmptyContainer() {
       preserveAspectRatio: 'xMidYMid slice',
     },
   }
+
+  //
+  // ───👉🏼👉🏼👉🏼 SOMETHING TO DISPLAY WHEN TASKS ARE EMPTY ──────────────────────────────────
+  //
+
   return (
     <div className='emptyBox'>
       <h5>Start by adding some tasks above</h5>
